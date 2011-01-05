@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-; var path   = require('path'),
+var path   = require('path'),
     sys    = require('sys'),
     fs     = require('fs'),
     events = require('events');
@@ -153,20 +153,26 @@ var arg, args = [], argv = process.argv.slice(2);
 // and path of test folder.
 var root, testFolder;
 
-
 if(!argv.length) {
   sys.puts(help);
 } else {
-  var readAllLines = function (filename) {
-    return function () {
-      fs.readFile(filename, encoding = 'ascii', this.callback);
-    };
-  };
-  argv.forEach(function(item, index) {
-    var filename = path.join(__dirname, '..', 'examples', 'login.feature');
-    fs.readFile(filename, encoding = 'ascii', function(err, data) {
-      kyuri.compile(data.toString(), {
-        directory: path.join(__dirname, '..', 'examples/output')
+  var target = path.join(__dirname, '..', argv[0]);
+    
+  fs.readdir(target, function(err, files) {  
+    if (err) throw new Error("WTF");
+    
+    files.forEach(function(file, index) {
+      fs.stat(path.join(target, file), function (stat_error, stat) {
+        if (stat_error) console.log("ERROR: " + file + ", " + stat_error);
+        if (stat.isFile()) {
+          var filename = path.join(target, file);
+          fs.readFile(filename, 'ascii', function (read_error, content) {
+            
+            if (read_error) console.log("ERROR: Can't read " + filename + ". " + read_error);
+            
+            kyuri.compile(content.toString(), { directory: path.join(target, 'output') });
+          });
+        }
       });
     });
   });
