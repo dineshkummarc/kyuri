@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var path   = require('path'),
+; var path   = require('path'),
     sys    = require('sys'),
     fs     = require('fs'),
     events = require('events');
@@ -14,7 +14,7 @@ var fileExt, specFileExt;
 
 try {
     var coffee = require('coffee-script');
-    require.registerExtension('.coffee', function (content) { return coffee.compile(content) });
+    require.registerExtension('.coffee', function (content) { return coffee.compile(content); });
     stepExt     = /\.(js|coffee)$/;
 } catch (_) {
     fileExt     = /\.js$/;
@@ -42,7 +42,7 @@ var help = [
     
     // Options specific to Kyuri
     "  --server          Run the Kyuri web service. Default to port 9000",
-    "  --port            Port to run server on",
+    "  --port            Port to run server on"
     
 ].join('\n');
 
@@ -153,4 +153,21 @@ var arg, args = [], argv = process.argv.slice(2);
 // and path of test folder.
 var root, testFolder;
 
-sys.puts('Kyuri test runner not currently complete in 0.2.0. In the roadmap for 0.2.1');
+
+if(!argv.length) {
+  sys.puts(help);
+} else {
+  var readAllLines = function (filename) {
+    return function () {
+      fs.readFile(filename, encoding = 'ascii', this.callback);
+    };
+  };
+  argv.forEach(function(item, index) {
+    var filename = path.join(__dirname, '..', 'examples', 'login.feature');
+    fs.readFile(filename, encoding = 'ascii', function(err, data) {
+      kyuri.compile(data.toString(), {
+        directory: path.join(__dirname, '..', 'examples/output')
+      });
+    });
+  });
+}

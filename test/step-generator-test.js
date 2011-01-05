@@ -24,7 +24,7 @@ var kyuri = require('kyuri'),
         string:  'green',
         number:  'magenta',
         bool:    'blue',      // true false
-        regexp:  'green',     // /\d+/
+        regexp:  'green'     // /\d+/
       },
       maxLength: 4096
     });
@@ -32,7 +32,7 @@ var kyuri = require('kyuri'),
 var readAllLines = function (filename) {
   return function () {
     fs.readFile(filename, encoding = 'ascii', this.callback);
-  } 
+  };
 };
 
 vows.describe('kyuri/generator').addBatch({
