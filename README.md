@@ -1,9 +1,14 @@
-
-
-
 # kyuri - plain words go in, [VowsJS][3] stubs come out
 
 kyuri is a [node.js][1] [Cucumber][0] implementation with a few extra asynchronous keywords. it supports 160+ languages and exports to [VowsJS][3] stubs
+
+## Usage
+
+<pre>
+	$ node ./bin/kyuri examples/
+</pre>
+
+Point to a directory of "Feature" files and it'll generate the stubs.
 
 ## Example
 
