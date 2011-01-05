@@ -163,6 +163,7 @@ if(!argv.length) {
     
     files.forEach(function(file, index) {
       fs.stat(path.join(target, file), function (stat_error, stat) {
+        
         if (stat_error) console.log("ERROR: " + file + ", " + stat_error);
         if (stat.isFile()) {
           var filename = path.join(target, file);

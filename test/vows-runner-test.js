@@ -18,7 +18,7 @@ var kyuri = require('kyuri'),
 var readAllLines = function (filename) {
   return function () {
     fs.readFile(filename, encoding = 'ascii', this.callback);
-  } 
+  };
 };
 
 vows.describe('kyuri/parser').addBatch({
