@@ -1,6 +1,6 @@
 /*
  * Registration.feature
- * Step definitions for Feature: \'Registration\'
+ * Step definitions for Feature: 'Registration'
  *
  * Auto-generated using Kyuri: http://github.com/nodejitsu/kyuri
  */

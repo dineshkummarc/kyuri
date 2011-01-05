@@ -1,6 +1,6 @@
 /*
  * Complex Addition.feature
- * Step definitions for Feature: \'Complex Addition\'
+ * Step definitions for Feature: 'Complex Addition'
  *
  * Auto-generated using Kyuri: http://github.com/nodejitsu/kyuri
  */

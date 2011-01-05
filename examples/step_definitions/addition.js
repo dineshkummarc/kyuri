@@ -1,6 +1,6 @@
 /*
  * Addition.feature
- * Step definitions for Feature: \'Addition\'
+ * Step definitions for Feature: 'Addition'
  *
  * Auto-generated using Kyuri: http://github.com/nodejitsu/kyuri
  */

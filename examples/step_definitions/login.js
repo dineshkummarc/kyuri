@@ -1,6 +1,6 @@
 /*
  * Login.feature
- * Step definitions for Feature: \'Login\'
+ * Step definitions for Feature: 'Login'
  *
  * Auto-generated using Kyuri: http://github.com/nodejitsu/kyuri
  */
