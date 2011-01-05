@@ -171,7 +171,7 @@ if(!argv.length) {
             
             if (read_error) console.log("ERROR: Can't read " + filename + ". " + read_error);
             
-            kyuri.compile(content.toString(), { directory: path.join(target, 'output') });
+            kyuri.compile(content.toString(), { directory: path.join(target, 'step_definitions') });
           });
         }
       });
